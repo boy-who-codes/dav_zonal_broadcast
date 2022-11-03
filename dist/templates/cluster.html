@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Cluster</h1>
+{%for cluster in cluster %}
+    {{cluster.name}}
+   
+    {{cluster.total_score}}
+    <h4>TEAMS</h4>
+    <ul>
+        {%for score in score %}
+            <li>{{score.team}}
+         {{score.Score}}</li>
+            
+        {%endfor%}
+{%endfor%}
+
+{% endblock content %}

@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% for match in match %}  
+    <div class="card" style="width: 110%;">
+        <div class="card-body">
+           
+          <h1 class="card-title">{{match.name}}</h1>
+          <center>  
+            <br><br>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <h5>{{match.team1}}</h5>
+                    </div>
+                    V/S
+                    <div class="col-sm">
+                        <h5>
+                        {{match.team2}}
+                    </h5>
+                    </div>
+                </div>
+            </div>
+            <br>
+            {% if match.winner %}
+            <h6 class="text-success"> Winner: {{match.winner}}</h6>
+        {% endif %}
+        </center>
+         <b> <h5 class="text-success">Result :   {{match.result}} </h5></b>
+           </div>
+      </div>
+      <br><br>
+      {% endfor %}
+{% endblock content %}
