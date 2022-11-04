@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-_t1o+=4gk5(%v8_lf21g(8=#-%(q_lxa)egs8%la4*scp205o)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['bwc-scorecard.herokuapp.com' , 'www.bwc-scorecard.herokuapp.com' , 'https://bwc-scorecard.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
