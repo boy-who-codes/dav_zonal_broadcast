@@ -1,18 +1,26 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Cluster</h1>
-{%for cluster in cluster %}
-    {{cluster.name}}
-   
-    {{cluster.total_score}}
-    <h4>TEAMS</h4>
-    <ul>
-        {%for score in score %}
-            <li>{{score.team}}
-         {{score.Score}}</li>
-            
-        {%endfor%}
-{%endfor%}
 
+{%for cluster,scores in data.items %}
+<center> <font size = 5><b style="float: left">{{cluster}}</b><b> <h5 style="float: right">Score :{{scores.total.Score__sum}}</h5></b></font></center>
+            <br>
+            <table>
+                <tr>
+                    <th>School Name</th>
+                    <th>Score</th>
+                </tr>
+                {%for score in scores.score  %}
+                <tr>
+                   
+                    <td>{{score.team}}</td>
+                  
+                    <td>{{score.Score}}</td>                   
+                </tr>
+                {%endfor%}
+                </table>
+                <br>
+                <br>
+                {%endfor%}
+             
 {% endblock content %}

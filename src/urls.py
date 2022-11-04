@@ -19,7 +19,7 @@ from dist.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home'),
-    path('match/<int:pk>', match, name='match'),
+    path('match/<str:name>', match, name='match'),
     path('cluster/', cluster, name='cluster'),
   
 ]
