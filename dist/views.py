@@ -17,7 +17,10 @@ def home(request):
 
 def match(request, name):
     sport_id = Sport.objects.filter(name=name).first()
-    matchs = Match.objects.filter(sport=sport_id.id)
+    if sport_id:
+        matchs = Match.objects.filter(sport=sport_id.id)
+    else:
+        matchs = []
     sports = Sport.objects.all()
     context = {
         'match': matchs,
