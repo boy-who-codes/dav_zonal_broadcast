@@ -44,15 +44,13 @@
      <nav id="navbar-example3" class="h-100 flex-column align-items-stretch pe-4 border-end">
       {%for sport in sports %}
        <nav class="nav nav-pills flex-column">
-         <a class="nav-link" href="match/{{sport.pk}}">{{sport.name}}</a>
+         <a class="nav-link" href="{%url 'match' sport.pk %}">{{sport.name}}</a>
         </nav>
         <hr>
         {%endfor%}
-        <nav class="nav nav-pills flex-column">
-            <a class="nav-link" href="/">Home</a>
-           </nav>
+       
         <nav>
-            <a style="position: absolute; bottom: 20px; " class="nav-link" href="cluster/"><button class="btn btn-primary">CLUSTER</button></a>
+            <a style="position: absolute; bottom: 20px; " class="nav-link" href="{%url 'home' %}"><button class="btn btn-primary">CLUSTER</button></a>
         </nav>
      </nav>
    </div>
